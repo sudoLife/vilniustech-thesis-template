@@ -1,3 +1,4 @@
 {
-  "latex-workshop.latex.build.forceRecipeUsage": false
+  "latex-workshop.latex.build.forceRecipeUsage": false,
+  "editor.wordWrap": "on"
 }
