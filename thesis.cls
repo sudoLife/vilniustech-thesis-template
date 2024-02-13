@@ -18,6 +18,7 @@
     outer=1.50cm,
     top=2cm,
     bottom=1cm,
+    footskip=0cm
 }
 
 % Custom font settings
