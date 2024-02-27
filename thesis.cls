@@ -51,5 +51,9 @@
 {1em} % Sep
 {\MakeUppercase} % Before-code
 
+% Figure style
+\RequirePackage{chngcntr}
+\counterwithin{figure}{subsection}
+\renewcommand{\fnum@figure}{Fig. \thefigure}
 
 % End of class file
