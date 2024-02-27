@@ -1,4 +1,10 @@
 *.aux
 *.log
 *.pdf
+*.ilg
+*.ind
+_minted*
+*.bib
+*.bbl
+*.xml
 *.synctex.gz
