@@ -1,5 +1,5 @@
 \ProvidesClass{thesis}[Vilnius Tech Thesis Class]
-\LoadClass[a4paper]{article} % Load the base report class with A4 paper
+\LoadClass[12pt,twoside,a4paper]{article} % Load the base report class with A4 paper
 
 % Required packages
 \RequirePackage{geometry}  % For setting page dimensions and margins
@@ -17,9 +17,10 @@
     inner=2.50cm,
     outer=1.50cm,
     top=2cm,
-    bottom=1cm,
-    footskip=0cm
+    bottom=2cm,
+    footskip=1.0cm
 }
+\raggedbottom
 
 % Custom font settings
 % Ensure you compile with XeLaTeX or LuaLaTeX to use fontspec
@@ -36,6 +37,8 @@
 {\thesection} % Label
 {1em} % Sep (space between label and title text)
 {\MakeUppercase} % Before-code (commands applied to title text)
+% increase spacing between section title and text
+\titlespacing{\section}{0pt}{1.5\baselineskip}{2\baselineskip}
 
 % Subsection titles in uppercase
 \titleformat{\subsection}
