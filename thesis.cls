@@ -7,7 +7,6 @@
 \RequirePackage{xcolor}    % For defining and using colors
 \RequirePackage{fontspec}  % For setting fonts (requires XeLaTeX or LuaLaTeX)
 \RequirePackage{indentfirst} % For indenting the first paragraph of a section
-\RequirePackage{setspace} % For line spacing
 
 % Define custom colors
 \definecolor{accentcolor}{RGB}{23, 101, 207}
@@ -29,8 +28,6 @@
 % Custom title and heading fonts
 \newfontfamily\titlefont{EB Garamond}
 \newfontfamily\headingfont{EB Garamond}
-
-\setstretch{1.5}  % 1.5 line spacing
 
 
 

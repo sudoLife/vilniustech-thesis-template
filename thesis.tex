@@ -7,7 +7,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{amsmath}
 \usepackage{minted}
-% use this if you want to number figures according to sections
+\usepackage{setspace} % For line spacing
+
+% use this if you want to number figures according to sections - use what?
 
 \usepackage[sorting=none]{biblatex}
 \addbibresource{references.bib}
@@ -19,6 +21,8 @@
 \include{titlepage}
 
 \include{tableofcontents}
+
+\setstretch{1.5}  % 1.5 line spacing, make sure to use it only from here
 
 \nsection{Non-numbered section}
 
