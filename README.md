@@ -6,7 +6,7 @@ This repository contains a LaTeX template for a bachelor's thesis at Vilnius Tec
 
 - [ ] Add proper header and footer
 - [ ] Add abstract
-- [ ] Add TOC
+- [x] Add TOC
 - [x] Add references using biblatex
 - [ ] Add tasks page
 - [ ] Add symbols & abbreviation page

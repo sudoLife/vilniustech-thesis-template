@@ -1,0 +1,71 @@
+\def\toclevel#1{\ifnum #1=0 \fi
+  \ifnum #1=1 \vskip 0.5em \fi
+  \ifnum #1=2 \vskip 0.25em \fi
+  \ifnum #1>2 \vskip 0.125em \fi
+  \hspace{\tocindent}}
+
+\def\l@section#1#2#3{\@tocsetting
+  \ifnum #1>\c@secnumdepth \else
+    \ifnum #1>0 \fi
+    \@tempcnta #1
+    \loop
+      \advance \@tempcnta by -1
+      \ifnum\@tempcnta<0 \break \fi
+      \addpenalty{-\@secpenalty}
+      \hskip \csname secindent\romannumeral \the\@tempcnta \@tocdepth\endcsname
+    \repeat
+  \fi
+  \parindent \z@ \raggedright \hangindent \the\tocindent
+  {\itshape\uppercase{#2}}\hfill % make section title uppercase and italic
+  \ifnum #1>\c@secnumdepth \else
+    \ifnum #1>0 \dotfill\fi
+    \addpenalty{-\@secpenalty}
+  \fi
+  \hbox to\@tocindent{\hfil #3}\par
+  \@tocsetting}
+
+\def\l@subsection#1#2#3{\@tocsetting
+  \ifnum #1>\c@secnumdepth \else
+    \ifnum #1>1 \fi
+    \@tempcnta #1
+    \loop
+      \advance \@tempcnta by -1
+      \ifnum\@tempcnta<0 \break \fi
+      \addpenalty{-\@subsecpenalty}
+      \hskip \csname secindent\romannumeral \the\@tempcnta \@tocdepth\endcsname
+    \repeat
+  \fi
+  \parindent \z@ \raggedright \hangindent \the\tocindent
+  \hspace{\@subsecindent}\relax
+  {#2}\hfill
+  \ifnum #1>\c@secnumdepth \else
+    \ifnum #1>1 \dotfill\fi
+    \addpenalty{-\@subsecpenalty}
+  \fi
+  \hbox to\@tocindent{\hfil #3}\par
+  \@tocsetting}
+
+\def\l@subsubsection#1#2#3{\@tocsetting
+  \ifnum #1>\c@secnumdepth \else
+    \ifnum #1>2 \fi
+    \@tempcnta #1
+    \loop
+      \advance \@tempcnta by -1
+      \ifnum\@tempcnta<0 \break \fi
+      \addpenalty{-\@subsubsecpenalty}
+      \hskip \csname secindent\romannumeral \the\@tempcnta \@tocdepth\endcsname
+    \repeat
+  \fi
+  \parindent \z@ \raggedright \hangindent \the\tocindent
+  \hspace{\@subsubsecindent}\relax
+  \@nopunct{#2}\hfill
+  \ifnum #1>\c@secnumdepth \else
+    \ifnum #1>2 \dotfill\fi
+    \addpenalty{-\@subsubsecpenalty}
+  \fi
+  \hbox to\@tocindent{\hfil #3}\par
+  \@tocsetting}
+
+\renewcommand\contentsname{Table of Contents} 
+\tableofcontents
+\newpage 
