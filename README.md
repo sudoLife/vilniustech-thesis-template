@@ -8,4 +8,5 @@ This repository contains a LaTeX template for a bachelor's thesis at Vilnius Tec
 - [ ] Add abstract
 - [ ] Add TOC
 - [x] Add references using biblatex
-- [x] Fix text size
+- [ ] Add tasks page
+- [ ] Add symbols & abbreviation page
