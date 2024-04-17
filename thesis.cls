@@ -7,7 +7,7 @@
 \RequirePackage{xcolor}    % For defining and using colors
 \RequirePackage{fontspec}  % For setting fonts (requires XeLaTeX or LuaLaTeX)
 \RequirePackage{indentfirst} % For indenting the first paragraph of a section
-\usepackage{setspace} % For line spacing
+\RequirePackage{setspace} % For line spacing
 
 % Define custom colors
 \definecolor{accentcolor}{RGB}{23, 101, 207}
