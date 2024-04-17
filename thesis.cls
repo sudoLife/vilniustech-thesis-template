@@ -63,4 +63,10 @@
 \counterwithin{figure}{subsection}
 \renewcommand{\fnum@figure}{Fig. \thefigure}
 
+% Non-numbered sections (TOC inclusive)
+\newcommand*{\nsection}[1]{
+    \section*{#1}
+    \addcontentsline{toc}{section}{#1}
+}
+
 % End of class file
