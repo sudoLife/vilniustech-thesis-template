@@ -68,8 +68,8 @@
 }
 \crefname{figure}{Figure}{Figures}
 \Crefname{figure}{Figure}{Figures}
-\crefformat{figure}{\textbf{#2Figure~#1#3}}
-\Crefformat{figure}{\textbf{#2Figure~#1#3}}
+\crefformat{figure}{\textbf{#2fig.~#1#3}}
+\Crefformat{figure}{\textbf{#2Fig.~#1#3}}
 
 % Table style
 \counterwithin{table}{subsection}
@@ -81,8 +81,8 @@
 }
 \crefname{table}{Table}{Tables}
 \Crefname{table}{Table}{Tables}
-\crefformat{figure}{\textbf{#Table~#1#3}}
-\Crefformat{figure}{\textbf{#Table~#1#3}}
+\crefformat{table}{\textbf{#2table~#1#3}}
+\Crefformat{table}{\textbf{#2Table~#1#3}}
 
 % Vertically centered, left aligned
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
