@@ -10,6 +10,9 @@
 \RequirePackage{caption}   % For custom caption styling
 \RequirePackage{array}     % For better column management
 \RequirePackage{chngcntr}  % For custom figure numbering
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage{amsmath}
+\RequirePackage{cleveref}  % For enhanced cross-referencing
 
 % Define custom colors
 \definecolor{accentcolor}{RGB}{23, 101, 207}
@@ -63,6 +66,10 @@
   font=small,
   labelfont=bf
 }
+\crefname{figure}{Figure}{Figures}
+\Crefname{figure}{Figure}{Figures}
+\crefformat{figure}{\textbf{#2Figure~#1#3}}
+\Crefformat{figure}{\textbf{#2Figure~#1#3}}
 
 % Table style
 \counterwithin{table}{subsection}
@@ -72,6 +79,10 @@
   justification=raggedright,
   singlelinecheck=false
 }
+\crefname{table}{Table}{Tables}
+\Crefname{table}{Table}{Tables}
+\crefformat{figure}{\textbf{#Table~#1#3}}
+\Crefformat{figure}{\textbf{#Table~#1#3}}
 
 % Vertically centered, left aligned
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
