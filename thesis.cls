@@ -59,6 +59,10 @@
 % Figure style
 \counterwithin{figure}{subsection}
 \renewcommand{\fnum@figure}{Fig. \thefigure}
+\captionsetup[figure]{
+  font=small,
+  labelfont=bf
+}
 
 % Table style
 \counterwithin{table}{subsection}
@@ -76,6 +80,54 @@
 \newcommand*{\nsection}[1]{
     \section*{#1}
     \addcontentsline{toc}{section}{#1}
+}
+
+% Code block style
+\RequirePackage{listings}
+\lstset{
+  basicstyle=\footnotesize\ttfamily, % Set the basic style for code
+  breaklines=true,                  % Enable line breaking
+  tabsize=2,                        % Set tab size
+  showstringspaces=false,           % Don't show spaces within strings
+  numbers=left,                     % Line numbers on the left
+  numberstyle=\tiny\color{gray},    % Style for line numbers
+  commentstyle=\color{green},       % Style for comments
+  keywordstyle=\color{blue},        % Style for keywords
+  stringstyle=\color{orange},       % Style for strings
+  frame=single,                     % Frame around the code
+  rulecolor=\color{black},          % Frame color
+  captionpos=b,                     % Caption position at bottom
+  escapeinside={(*@}{@*)},          % Escape to LaTeX with (*@ ... @*)
+  morecomment=[l][\color{magenta}]{\#}  % Define more comment styles
+}
+
+% Code block colors
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstset{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+\AtBeginDocument{\counterwithin{lstlisting}{subsection}}
+\captionsetup[lstlisting]{
+  font=small,
+  labelfont=bf
 }
 
 % End of class file
