@@ -7,6 +7,9 @@
 \RequirePackage{xcolor}    % For defining and using colors
 \RequirePackage{fontspec}  % For setting fonts (requires XeLaTeX or LuaLaTeX)
 \RequirePackage{indentfirst} % For indenting the first paragraph of a section
+\RequirePackage{caption}   % For custom caption styling
+\RequirePackage{array}     % For better column management
+\RequirePackage{chngcntr}  % For custom figure numbering
 
 % Define custom colors
 \definecolor{accentcolor}{RGB}{23, 101, 207}
@@ -28,8 +31,6 @@
 % Custom title and heading fonts
 \newfontfamily\titlefont{EB Garamond}
 \newfontfamily\headingfont{EB Garamond}
-
-
 
 % Custom title and heading styles, make them uppercase
 % Section titles in uppercase
@@ -56,9 +57,20 @@
 {\MakeUppercase} % Before-code
 
 % Figure style
-\RequirePackage{chngcntr}
 \counterwithin{figure}{subsection}
 \renewcommand{\fnum@figure}{Fig. \thefigure}
+
+% Table style
+\counterwithin{table}{subsection}
+\captionsetup[table]{
+  font=small,
+  labelfont=bf,
+  justification=raggedright,
+  singlelinecheck=false
+}
+
+% Vertically centered, left aligned
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
 
 % Non-numbered sections (TOC inclusive)
 \newcommand*{\nsection}[1]{
