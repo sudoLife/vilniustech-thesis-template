@@ -60,7 +60,7 @@
 {\MakeUppercase} % Before-code
 
 % Figure style
-\counterwithin{figure}{subsection}
+\counterwithin{figure}{section}
 \renewcommand{\fnum@figure}{Fig. \thefigure}
 \captionsetup[figure]{
   font=small,
@@ -72,7 +72,7 @@
 \Crefformat{figure}{\textbf{#2Fig.~#1#3}}
 
 % Table style
-\counterwithin{table}{subsection}
+\counterwithin{table}{section}
 \captionsetup[table]{
   font=small,
   labelfont=bf,
@@ -135,7 +135,7 @@
   showtabs=false,                  
   tabsize=2
 }
-\AtBeginDocument{\counterwithin{lstlisting}{subsection}}
+\AtBeginDocument{\counterwithin{lstlisting}{section}}
 \captionsetup[lstlisting]{
   font=small,
   labelfont=bf
