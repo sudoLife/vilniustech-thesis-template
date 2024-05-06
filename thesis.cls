@@ -89,6 +89,7 @@
 
 % Non-numbered sections (TOC inclusive)
 \newcommand*{\nsection}[1]{
+    \phantomsection % ensure correct anchor for hyperref
     \section*{#1}
     \addcontentsline{toc}{section}{#1}
 }
