@@ -146,4 +146,8 @@
 \usepackage{enumitem} 
 \setlist[itemize]{label={\rule[0.25ex]{0.7ex}{0.7ex}}}
 
+% Table shenanigans
+\usepackage{diagbox}
+\captionsetup[table]{justification=centering} % Set all table captions to be centered
+
 % End of class file
