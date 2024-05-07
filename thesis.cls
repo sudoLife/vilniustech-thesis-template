@@ -142,4 +142,8 @@
   labelfont=bf
 }
 
+% Overriding default itemize settings
+\usepackage{enumitem} 
+\setlist[itemize]{label={\rule[0.25ex]{0.7ex}{0.7ex}}}
+
 % End of class file
