@@ -142,6 +142,15 @@
   labelfont=bf
 }
 
+% So code listing doesn't page break
+\lstnewenvironment{code}[1][]%
+{
+   \noindent
+   \minipage{\linewidth} 
+   \vspace{0.5\baselineskip}
+   \lstset{basicstyle=\ttfamily\footnotesize,frame=single,#1}}
+{\endminipage}
+
 % Overriding default itemize settings
 \usepackage{enumitem} 
 \setlist[itemize]{label={\rule[0.25ex]{0.7ex}{0.7ex}}}
