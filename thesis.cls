@@ -13,6 +13,8 @@
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{amsmath}
 \RequirePackage{cleveref}  % For enhanced cross-referencing
+\RequirePackage{enumitem}
+\RequirePackage{setspace}
 
 % Define custom colors
 \definecolor{accentcolor}{RGB}{23, 101, 207}
@@ -152,8 +154,10 @@
 {\endminipage}
 
 % Overriding default itemize settings
-\usepackage{enumitem} 
-\setlist[itemize]{label={\rule[0.25ex]{0.7ex}{0.7ex}}}
+\setlist[itemize]{
+    label={\rule[0.25ex]{0.7ex}{0.7ex}},
+    nosep
+}
 
 % Table shenanigans
 \usepackage{diagbox}
