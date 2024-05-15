@@ -109,28 +109,16 @@
 
 % Code block style
 \RequirePackage{listings}
-\lstset{
-  basicstyle=\footnotesize\ttfamily, % Set the basic style for code
-  breaklines=true,                  % Enable line breaking
-  tabsize=2,                        % Set tab size
-  showstringspaces=false,           % Don't show spaces within strings
-  numbers=left,                     % Line numbers on the left
-  numberstyle=\tiny\color{gray},    % Style for line numbers
-  commentstyle=\color{green},       % Style for comments
-  keywordstyle=\color{blue},        % Style for keywords
-  stringstyle=\color{orange},       % Style for strings
-  frame=single,                     % Frame around the code
-  rulecolor=\color{black},          % Frame color
-  captionpos=b,                     % Caption position at bottom
-  escapeinside={(*@}{@*)},          % Escape to LaTeX with (*@ ... @*)
-  morecomment=[l][\color{magenta}]{\#}  % Define more comment styles
-}
+\usepackage{color}
+\usepackage{caption}
 
-% Code block colors
+% Define colors
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Listings settings
 \lstset{
   backgroundcolor=\color{backcolour},
   commentstyle=\color{codegreen},
@@ -147,22 +135,32 @@
   showspaces=false,                
   showstringspaces=false,
   showtabs=false,                  
-  tabsize=2
+  tabsize=2,
+  frame=single,
+  rulecolor=\color{black},
+  escapeinside={(*@}{@*)},
+  morecomment=[l][\color{magenta}]{\#}
 }
 \AtBeginDocument{\counterwithin{lstlisting}{section}}
 \captionsetup[lstlisting]{
   font=small,
   labelfont=bf
 }
-
-% So code listing doesn't page break
+% Prevent page break within lstlisting
 \lstnewenvironment{code}[1][]%
 {
    \noindent
    \minipage{\linewidth} 
    \vspace{0.5\baselineskip}
-   \lstset{basicstyle=\ttfamily\footnotesize,frame=single,#1}}
-{\endminipage}
+   \lstset{#1}
+}
+{
+    \endminipage
+}
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+\crefformat{lstlisting}{\textbf{#2listing~#1#3}}
+\Crefformat{lstlisting}{\textbf{#2Listing~#1#3}}
 
 % Overriding default itemize settings
 \setlist[itemize]{
