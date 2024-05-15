@@ -8,6 +8,13 @@
 \usepackage{amsmath}
 \usepackage{minted}
 \usepackage{setspace} % For line spacing
+\usepackage[acronym]{glossaries}
+\usepackage{glossary-mcols}
+
+\makeglossaries
+\newacronym{arm}{ARM}{Advanced RISC Machine}
+\newacronym{usb}{USB}{Universal Serial Bus}
+\newacronym{ieee}{IEEE}{Institute of Electrical and Electronics Engineers}
 
 % use this if you want to number figures according to sections - use what?
 
@@ -22,11 +29,15 @@
 
 \include{tableofcontents}
 
+\printglossary[type=\acronymtype, style=mcolindex]
+
 \setstretch{1.5}  % 1.5 line spacing, make sure to use it only from here
 
 \nsection{Non-numbered section}
 
 \section{Introduction. Task Analysis}
+
+Here is some text using acronyms like \acrshort{arm}, \acrlong{usb}, and \acrfull{ieee}.
 
 Ea in in excepteur id deserunt fugiat culpa velit do. Ex ut aute consectetur
 duis deserunt proident ea laboris excepteur magna fugiat cillum consectetur.
