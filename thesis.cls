@@ -109,8 +109,8 @@
 
 % Code block style
 \RequirePackage{listings}
-\usepackage{color}
-\usepackage{caption}
+\RequirePackage{color}
+\RequirePackage{caption}
 
 % Define colors
 \definecolor{codegreen}{rgb}{0,0.6,0}
