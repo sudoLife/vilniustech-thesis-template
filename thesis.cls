@@ -101,6 +101,12 @@
     \addcontentsline{toc}{section}{#1}
 }
 
+\newcommand*{\nsubsection}[1]{
+    \phantomsection % Ensure correct anchor for hyperref
+    \subsection*{#1}
+    \addcontentsline{toc}{subsection}{#1}
+}
+
 % Code block style
 \RequirePackage{listings}
 \lstset{
