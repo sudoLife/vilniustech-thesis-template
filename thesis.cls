@@ -63,8 +63,8 @@
 
 \crefname{section}{Section}{Sections}
 \Crefname{section}{Section}{Sections}
-\crefformat{section}{\textbf{#2section~#1#3}}
-\Crefformat{section}{\textbf{#2Section~#1#3}}
+\crefformat{section}{\textbf{#2#1#3}}
+\Crefformat{section}{\textbf{#2#1#3}}
 
 % Figure style
 \counterwithin{figure}{section}
