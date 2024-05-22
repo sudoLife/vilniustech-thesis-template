@@ -140,6 +140,8 @@
   rulecolor=\color{black},
   escapeinside={(*@}{@*)},
   morecomment=[l][\color{magenta}]{\#}
+  xleftmargin=0.4cm, % Set a small left margin due to numbers clipping
+  xrightmargin=0.15cm, % Set a tiny right margin due to small clipping
 }
 \AtBeginDocument{\counterwithin{lstlisting}{section}}
 \captionsetup[lstlisting]{
