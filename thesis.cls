@@ -61,11 +61,6 @@
 {1em} % Sep
 {\MakeUppercase} % Before-code
 
-\crefname{section}{Section}{Sections}
-\Crefname{section}{Section}{Sections}
-\crefformat{section}{\textbf{#2#1#3}}
-\Crefformat{section}{\textbf{#2#1#3}}
-
 % Figure style
 \counterwithin{figure}{section}
 \renewcommand{\fnum@figure}{Fig. \thefigure}
@@ -96,11 +91,12 @@
 
 % Non-numbered sections (TOC inclusive)
 \newcommand*{\nsection}[1]{
-    \phantomsection % ensure correct anchor for hyperref
+    \phantomsection % Ensure correct anchor for hyperref
     \section*{#1}
     \addcontentsline{toc}{section}{#1}
 }
 
+% Non-numbered sections (TOC inclusive)
 \newcommand*{\nsubsection}[1]{
     \phantomsection % Ensure correct anchor for hyperref
     \subsection*{#1}
@@ -109,10 +105,25 @@
 
 % Code block style
 \RequirePackage{listings}
-\RequirePackage{color}
-\RequirePackage{caption}
+\lstset{
+  basicstyle=\footnotesize\ttfamily, % Set the basic style for code
+  breaklines=true,                  % Enable line breaking
+  tabsize=2,                        % Set tab size
+  showstringspaces=false,           % Don't show spaces within strings
+  numbers=left,                     % Line numbers on the left
+  numberstyle=\tiny\color{gray},    % Style for line numbers
+  commentstyle=\color{green},       % Style for comments
+  keywordstyle=\color{blue},        % Style for keywords
+  stringstyle=\color{orange},       % Style for strings
+  frame=single,                     % Frame around the code
+  rulecolor=\color{black},          % Frame color
+  captionpos=b,                     % Caption position at bottom
+  escapeinside={(*@}{@*)},          % Escape to LaTeX with (*@ ... @*)
+  morecomment=[l][\color{magenta}]{\#},  % Define more comment styles
+  xleftmargin=15pt                  % Extra margin on the left side
+}
 
-% Define colors
+% Code block colors
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -135,13 +146,7 @@
   showspaces=false,                
   showstringspaces=false,
   showtabs=false,                  
-  tabsize=2,
-  frame=single,
-  rulecolor=\color{black},
-  escapeinside={(*@}{@*)},
-  morecomment=[l][\color{magenta}]{\#}
-  xleftmargin=0.4cm, % Set a small left margin due to numbers clipping
-  xrightmargin=0.15cm, % Set a tiny right margin due to small clipping
+  tabsize=2
 }
 \AtBeginDocument{\counterwithin{lstlisting}{section}}
 \captionsetup[lstlisting]{
@@ -154,21 +159,20 @@
    \noindent
    \minipage{\linewidth} 
    \vspace{0.5\baselineskip}
-   \lstset{#1}
+   \lstset{basicstyle=\ttfamily\footnotesize,frame=single,#1}
 }
 {
-    \endminipage
+  \endminipage
 }
-\crefname{lstlisting}{listing}{listings}
-\Crefname{lstlisting}{Listing}{Listings}
-\crefformat{lstlisting}{\textbf{#2listing~#1#3}}
-\Crefformat{lstlisting}{\textbf{#2Listing~#1#3}}
 
 % Overriding default itemize settings
+\usepackage{enumitem} 
+\setlist[itemize]{label={\rule[0.25ex]{0.7ex}{0.7ex}}}
 \setlist[itemize]{
     label={\rule[0.25ex]{0.7ex}{0.7ex}},
     nosep
 }
+\setlist[enumerate]{itemsep=0pt}
 
 % Table shenanigans
 \usepackage{diagbox}

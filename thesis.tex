@@ -10,28 +10,46 @@
 \usepackage{setspace} % For line spacing
 \usepackage[acronym]{glossaries}
 \usepackage{glossary-mcols}
+\usepackage{pdfpages}
 
 \makeglossaries
 \newacronym{arm}{ARM}{Advanced RISC Machine}
 \newacronym{usb}{USB}{Universal Serial Bus}
 \newacronym{ieee}{IEEE}{Institute of Electrical and Electronics Engineers}
 
-% use this if you want to number figures according to sections - use what?
+% Setup figure captions
+\captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={Fig.}}
+\captionsetup[table]{
+  justification=raggedright, % Align table captions to the right
+  singlelinecheck=false     % Ensure single line captions are also right-aligned
+}
 
+% Redefine \section to start on a new page
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+
+\usepackage{url}
+\urlstyle{same}
 \usepackage[sorting=none]{biblatex}
 \addbibresource{references.bib}
 
-\graphicspath{{resources/}}
+% \graphicspath{{resources/}} % Does anybody even use this?
 
 \begin{document}
 
 \include{titlepage}
+
+%Additional documents:
+\includepdf[pages=-]{documents/language_change_approved.pdf}
 
 \include{tableofcontents}
 
 \printglossary[type=\acronymtype, style=mcolindex]
 
 \setstretch{1.5}  % 1.5 line spacing, make sure to use it only from here
+
+\listoffigures   % List of Figures
+\listoftables    % List of Tables
 
 \nsection{Non-numbered section}
 
@@ -84,6 +102,8 @@ dolore fugiat. Cupidatat voluptate dolor elit cupidatat officia id.
 Occaecat adipisicing ad ullamco non velit qui ea excepteur amet qui nulla anim
 nostrud. Velit occaecat culpa mollit amet ut reprehenderit sunt. Mollit eu in
 
+
+% \cleardoublepage % Can use this to reset text siding in pages; Prolly easiest way to use this command is manually
 \section{Analogous system overview}
 % a paragraph of lorem ipsum
 Lorem~\cite{ciaglia_roboflow_2022} ipsum  dolor sit amet, consectetur adipiscing elit. Sed non risus.
